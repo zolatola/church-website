@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" type="image/jpeg" href="images/adpm-logo.jpg">
+<title>Contact — ADPM Birmingham</title>
+<meta name="description" content="Get in touch with ADPM Birmingham, plan your first visit, or find directions to our services.">
+<style>
+/* ============================================================
+   ADPM BIRMINGHAM — shared styles
+   Palette: orange #FF7324, cream #F8EC9A, brown #814D1E,
+            red #FF101C, white #FFFFFF
+   Signature: the "Unity Stripe" — a five-band ribbon standing
+   in for a congregation of many threads woven into one.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root{
+  --orange:#FF7324;
+  --cream:#F8EC9A;
+  --brown:#814D1E;
+  --red:#FF101C;
+  --white:#FFFFFF;
+
+  --ink:#3A2210;              /* body text — brown, softened for reading */
+  --ink-soft:#6B4B30;
+
+  --font-display:'Fraunces', Georgia, serif;
+  --font-body:'Inter', -apple-system, sans-serif;
+  --font-mono:'Space Mono', monospace;
+
+  --radius:2px;
+  --container:1180px;
+  --stripe-h:10px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.55;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  color:var(--brown);
+  margin:0 0 .4em;
+  font-weight:700;
+  line-height:1.08;
+  letter-spacing:-.01em;
+}
+p{margin:0 0 1em;}
+ul{margin:0;padding:0;list-style:none;}
+.container{max-width:var(--container);margin:0 auto;padding:0 28px;}
+
+/* -------- Unity Stripe : the signature element -------- */
+.stripe{
+  display:flex;
+  height:var(--stripe-h);
+  width:100%;
+}
+.stripe span{flex:1;}
+.stripe span:nth-child(1){background:var(--red);}
+.stripe span:nth-child(2){background:var(--orange);}
+.stripe span:nth-child(3){background:var(--cream);}
+.stripe span:nth-child(4){background:var(--brown);}
+.stripe span:nth-child(5){background:var(--orange);}
+
+.stripe--thin{--stripe-h:4px;}
+
+/* -------- eyebrow / mono labels -------- */
+.eyebrow{
+  font-family:var(--font-mono);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:.74rem;
+  color:var(--red);
+  display:inline-flex;
+  align-items:center;
+  gap:.6em;
+  margin-bottom:.9em;
+}
+.eyebrow::before{
+  content:'';
+  width:22px;height:2px;
+  background:var(--orange);
+  display:inline-block;
+}
+
+/* ==================== HEADER / NAV ==================== */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:var(--white);
+  border-bottom:1px solid rgba(129,77,30,.14);
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 28px;
+  max-width:var(--container);
+  margin:0 auto;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.28rem;
+  color:var(--brown);
+}
+.brand-mark{
+  width:44px;height:44px;
+  border-radius:50%;
+  overflow:hidden;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.brand small{
+  display:block;
+  font-family:var(--font-mono);
+  font-weight:400;
+  font-size:.6rem;
+  letter-spacing:.1em;
+  color:var(--ink-soft);
+  text-transform:uppercase;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:.95rem;
+}
+.nav-links a{
+  position:relative;
+  padding:6px 2px;
+  color:var(--ink);
+}
+.nav-links a::after{
+  content:'';
+  position:absolute;left:0;bottom:0;
+  width:0;height:2px;
+  background:var(--orange);
+  transition:width .2s ease;
+}
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after{width:100%;}
+.nav-links a[aria-current="page"]{color:var(--orange);}
+.nav-cta{
+  background:var(--red);
+  color:var(--white) !important;
+  padding:10px 20px !important;
+  border-radius:var(--radius);
+  font-weight:700 !important;
+}
+.nav-cta::after{display:none;}
+.nav-cta:hover{background:var(--orange);}
+
+.nav-toggle{
+  display:none;
+  background:none;border:none;cursor:pointer;
+  width:40px;height:40px;
+  align-items:center;justify-content:center;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after{
+  content:'';
+  display:block;
+  width:22px;height:2px;
+  background:var(--brown);
+  position:relative;
+  transition:.2s;
+}
+.nav-toggle span::before{position:absolute;top:-7px;}
+.nav-toggle span::after{position:absolute;top:7px;}
+
+@media (max-width:860px){
+  .nav-toggle{display:flex;}
+  .nav-links{
+    position:fixed;
+    inset:65px 0 0 0;
+    background:var(--white);
+    flex-direction:column;
+    align-items:flex-start;
+    padding:30px 28px;
+    gap:22px;
+    font-size:1.1rem;
+    transform:translateY(-110%);
+    transition:transform .25s ease;
+    border-top:1px solid rgba(129,77,30,.14);
+    height:calc(100vh - 65px);
+    overflow-y:auto;
+  }
+  .nav-links.open{transform:translateY(0);}
+  .nav-cta{margin-top:6px;}
+}
+
+/* ==================== BUTTONS ==================== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.5em;
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:.95rem;
+  padding:14px 26px;
+  border-radius:var(--radius);
+  border:2px solid transparent;
+  cursor:pointer;
+  transition:transform .15s ease, background .2s ease, color .2s ease;
+}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--orange);color:var(--white);}
+.btn-primary:hover{background:var(--red);}
+.btn-ghost{border-color:var(--brown);color:var(--brown);background:transparent;}
+.btn-ghost:hover{background:var(--brown);color:var(--white);}
+.btn-ghost.on-dark{border-color:var(--white);color:var(--white);}
+.btn-ghost.on-dark:hover{background:var(--white);color:var(--brown);}
+
+/* ==================== HERO ==================== */
+.hero{
+  position:relative;
+  background:var(--white);
+  padding:88px 0 0;
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:50px;
+  align-items:center;
+  padding-bottom:70px;
+}
+.hero h1{
+  font-size:clamp(2.6rem,5.4vw,4.3rem);
+  margin-bottom:.28em;
+}
+.hero h1 em{
+  font-style:italic;
+  color:var(--orange);
+}
+.hero .lede{
+  font-size:1.14rem;
+  color:var(--ink-soft);
+  max-width:46ch;
+  margin-bottom:1.6em;
+}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:2em;}
+
+.hero-art{
+  position:relative;
+  aspect-ratio:4/5;
+  border-radius:6px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(248,236,154,.9), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(255,16,28,.18), transparent 50%),
+    linear-gradient(155deg, var(--orange), var(--brown) 82%);
+  display:flex;
+  align-items:flex-end;
+  padding:26px;
+  overflow:hidden;
+}
+.hero-art::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:repeating-linear-gradient(115deg, rgba(255,255,255,.08) 0 2px, transparent 2px 34px);
+}
+.hero-art-card{
+  position:relative;
+  background:rgba(255,255,255,.94);
+  color:var(--brown);
+  padding:16px 18px;
+  border-radius:3px;
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  line-height:1.5;
+  width:100%;
+}
+.hero-art-card b{display:block;font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:2px;}
+
+.hero-strip-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0 40px;
+  padding:22px 0;
+  border-top:1px solid rgba(129,77,30,.16);
+}
+.hero-strip-row div{
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  color:var(--ink-soft);
+  padding:6px 0;
+}
+.hero-strip-row b{color:var(--brown);font-size:.85rem;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;padding-bottom:40px;}
+  .hero-art{aspect-ratio:16/10;}
+}
+
+/* ==================== SECTION HELPERS ==================== */
+section{padding:86px 0;}
+.section-cream{background:var(--cream);}
+.section-brown{background:var(--brown);color:var(--white);}
+.section-brown h2, .section-brown h3{color:var(--white);}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:48px;
+  flex-wrap:wrap;
+}
+.section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);max-width:16ch;}
+.section-head p{max-width:38ch;color:var(--ink-soft);margin:0;}
+.section-brown .section-head p{color:#F3D9BE;}
+
+/* ==================== CARDS ==================== */
+.grid{display:grid;gap:26px;}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-4{grid-template-columns:repeat(4,1fr);}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+@media (max-width:900px){
+  .grid-3,.grid-4{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:600px){
+  .grid-3,.grid-4,.grid-2{grid-template-columns:1fr;}
+}
+
+.card{
+  background:var(--white);
+  border:1px solid rgba(129,77,30,.16);
+  border-radius:4px;
+  padding:30px 26px;
+  position:relative;
+}
+.card .num{
+  font-family:var(--font-mono);
+  color:var(--orange);
+  font-size:.78rem;
+  margin-bottom:14px;
+  display:block;
+}
+.card h3{font-size:1.24rem;margin-bottom:.5em;}
+.card p{color:var(--ink-soft);font-size:.95rem;margin-bottom:0;}
+.card-accent{border-top:4px solid var(--orange);}
+
+/* service-time cards */
+.time-card{
+  background:var(--white);
+  border-radius:4px;
+  padding:26px;
+  border-left:4px solid var(--red);
+}
+.time-card .day{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;font-size:.75rem;color:var(--red);}
+.time-card h3{margin:.3em 0 .25em;font-size:1.35rem;}
+.time-card .when{font-family:var(--font-mono);font-size:.85rem;color:var(--ink-soft);}
+
+/* people cards */
+.person{
+  background:var(--white);
+  border:1px solid rgba(129,77,30,.16);
+  border-radius:4px;
+  overflow:hidden;
+}
+.person-photo{
+  aspect-ratio:1/1;
+  background:linear-gradient(150deg,var(--orange),var(--brown));
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.person-photo::after{
+  content:'';
+  position:absolute;inset:0;
+  background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.08) 0 2px, transparent 2px 22px);
+}
+.person-initials{
+  position:relative;
+  font-family:var(--font-display);
+  font-size:2.6rem;
+  color:rgba(255,255,255,.92);
+  font-weight:700;
+}
+.person-body{padding:20px 22px 24px;}
+.person-body h3{font-size:1.12rem;margin-bottom:.15em;}
+.person-role{
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--orange);
+  display:block;
+  margin-bottom:.7em;
+}
+.person-body p{font-size:.9rem;color:var(--ink-soft);margin:0;}
+
+/* quote */
+.quote{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:clamp(1.3rem,2.6vw,1.9rem);
+  max-width:26ch;
+  color:var(--brown);
+  line-height:1.35;
+}
+.quote cite{
+  display:block;
+  font-family:var(--font-mono);
+  font-style:normal;
+  font-size:.75rem;
+  color:var(--ink-soft);
+  margin-top:1em;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+/* schedule table */
+.schedule-table{width:100%;border-collapse:collapse;background:var(--white);}
+.schedule-table th,.schedule-table td{
+  text-align:left;
+  padding:16px 18px;
+  border-bottom:1px solid rgba(129,77,30,.16);
+}
+.schedule-table th{
+  font-family:var(--font-mono);
+  text-transform:uppercase;
+  font-size:.72rem;
+  letter-spacing:.08em;
+  color:var(--red);
+}
+.schedule-table td.day-cell{
+  font-family:var(--font-display);
+  font-weight:700;
+  color:var(--brown);
+  font-size:1.05rem;
+}
+.schedule-table tr:last-child td{border-bottom:none;}
+.table-wrap{overflow-x:auto;border:1px solid rgba(129,77,30,.16);border-radius:4px;}
+
+/* gallery */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+@media (max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+.gallery-tile{
+  position:relative;
+  aspect-ratio:1/1;
+  border-radius:3px;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  cursor:pointer;
+}
+.gallery-tile::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(0deg, rgba(58,34,16,.72) 0%, transparent 55%);
+}
+.gallery-tile span{
+  position:relative;
+  color:var(--white);
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  padding:14px;
+  letter-spacing:.03em;
+}
+.gallery-tile.big{grid-column:span 2;grid-row:span 2;}
+@media (max-width:600px){.gallery-tile.big{grid-column:span 2;grid-row:span 1;}}
+
+.filter-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:34px;
+}
+.filter-pill{
+  font-family:var(--font-mono);
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  padding:9px 16px;
+  border:1px solid var(--brown);
+  border-radius:20px;
+  color:var(--brown);
+  background:transparent;
+  cursor:pointer;
+  transition:.2s;
+}
+.filter-pill.active,.filter-pill:hover{background:var(--brown);color:var(--white);}
+
+/* lightbox */
+.lightbox{
+  position:fixed;inset:0;
+  background:rgba(58,34,16,.92);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+  padding:40px;
+  flex-direction:column;
+  gap:16px;
+}
+.lightbox.open{display:flex;}
+.lightbox-frame{
+  width:min(640px,90vw);
+  aspect-ratio:4/3;
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--white);
+  font-family:var(--font-display);
+  font-size:1.6rem;
+  text-align:center;
+  padding:20px;
+}
+.lightbox-cap{color:var(--cream);font-family:var(--font-mono);font-size:.85rem;}
+.lightbox-close{
+  color:var(--white);
+  font-family:var(--font-mono);
+  background:none;border:1px solid var(--white);
+  padding:8px 16px;border-radius:20px;cursor:pointer;
+}
+
+/* forms */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.form-grid .full{grid-column:1/-1;}
+@media (max-width:640px){.form-grid{grid-template-columns:1fr;}}
+label{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--brown);
+  margin-bottom:8px;
+}
+input,select,textarea{
+  width:100%;
+  font-family:var(--font-body);
+  font-size:.95rem;
+  padding:13px 14px;
+  border:1px solid rgba(129,77,30,.35);
+  border-radius:3px;
+  background:var(--white);
+  color:var(--ink);
+}
+input:focus,select:focus,textarea:focus{
+  outline:2px solid var(--orange);
+  outline-offset:1px;
+}
+textarea{resize:vertical;min-height:130px;}
+
+/* contact info list */
+.info-list li{
+  display:flex;
+  gap:16px;
+  padding:18px 0;
+  border-bottom:1px solid rgba(129,77,30,.16);
+}
+.info-list li:first-child{padding-top:0;}
+.info-list .tag{
+  font-family:var(--font-mono);
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--red);
+  width:88px;
+  flex-shrink:0;
+  padding-top:2px;
+}
+.info-list b{display:block;color:var(--brown);font-size:1.02rem;}
+.info-list p{margin:2px 0 0;color:var(--ink-soft);font-size:.92rem;}
+
+.map-block{
+  aspect-ratio:16/11;
+  border-radius:4px;
+  background:
+    linear-gradient(155deg, var(--cream), var(--white) 60%);
+  border:1px solid rgba(129,77,30,.18);
+  position:relative;
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.map-block::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(129,77,30,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(129,77,30,.10) 1px, transparent 1px);
+  background-size:34px 34px;
+}
+.map-pin{
+  position:relative;
+  text-align:center;
+  font-family:var(--font-mono);
+  font-size:.8rem;
+  color:var(--brown);
+}
+.map-pin .dot{
+  width:20px;height:20px;
+  background:var(--red);
+  border:4px solid var(--white);
+  border-radius:50%;
+  margin:0 auto 10px;
+  box-shadow:0 0 0 3px var(--red);
+}
+
+/* CTA band */
+.cta-band{
+  background:var(--red);
+  color:var(--white);
+  text-align:center;
+  padding:80px 0;
+}
+.cta-band h2{color:var(--white);font-size:clamp(2rem,4vw,2.8rem);max-width:20ch;margin:0 auto .3em;}
+.cta-band p{color:#FFD9D3;max-width:44ch;margin:0 auto 1.8em;}
+.cta-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+/* page header (non-home pages) */
+.page-header{
+  padding:64px 0 54px;
+  background:var(--cream);
+  position:relative;
+}
+.page-header h1{font-size:clamp(2.2rem,4.6vw,3.2rem);margin-bottom:.28em;}
+.page-header p{max-width:52ch;color:var(--ink-soft);font-size:1.06rem;margin:0;}
+
+/* ==================== FOOTER ==================== */
+.site-footer{
+  background:var(--brown);
+  color:#F3D9BE;
+  padding-top:60px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:50px;
+}
+@media (max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:520px){.footer-grid{grid-template-columns:1fr;}}
+.footer-grid h4{
+  color:var(--white);
+  font-family:var(--font-mono);
+  text-transform:uppercase;
+  font-size:.75rem;
+  letter-spacing:.1em;
+  margin-bottom:1.1em;
+}
+.footer-grid li{margin-bottom:.6em;font-size:.92rem;}
+.footer-grid a:hover{color:var(--cream);}
+.footer-brand{font-family:var(--font-display);color:var(--white);font-size:1.3rem;margin-bottom:.4em;}
+.footer-tag{max-width:32ch;font-size:.92rem;color:#E4C09B;}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.14);
+  padding:22px 0;
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  color:#CBA57C;
+}
+
+/* skip link / a11y */
+.skip-link{
+  position:absolute;left:-999px;top:auto;
+  background:var(--brown);color:var(--white);
+  padding:10px 16px;z-index:2000;
+}
+.skip-link:focus{left:12px;top:12px;}
+:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;scroll-behavior:auto !important;}
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a href="index.html" class="brand">
+      <img src="images/adpm-logo.jpg" alt="ADPM Birmingham logo" class="brand-mark">
+      <span>ADPM<small>Birmingham</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="youth.html">Youth</a></li>
+      <li><a href="leaders.html">Leaders</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+      <li><a href="contact.html#visit" class="nav-cta">Plan a Visit</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="stripe" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+<main id="main">
+
+  <div class="page-header">
+    <div class="container">
+      <p class="eyebrow">We'd love to hear from you</p>
+      <h1>Get in touch</h1>
+      <p>Questions about a service, prayer requests, or just want to say hello — reach us any of the ways below, or drop a message and someone from our team will reply within a day or two.</p>
+    </div>
+  </div>
+
+  <!-- PASTORAL OUTREACH -->
+  <section class="section-cream">
+    <div class="container">
+      <p class="eyebrow">A Message from Our Pastor</p>
+      <h2 style="max-width:20ch;">Pastoral Outreach</h2>
+      <p class="quote" style="max-width:72ch;margin:1em 0 3.2em;">&ldquo;Assembly of God Pentecostal of Maculusso (ADPM Birmingham) proposes to develop an inclusive community support programme for residents of Newtown and the wider Birmingham area. The services will respond directly to priorities identified through conversations and consultations with local people.&rdquo;<cite>Senior Pastor, ADPM Birmingham</cite></p>
+
+      <p style="font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;color:var(--red);margin-bottom:1.1em;">For Children &amp; Young People</p>
+      <div class="grid grid-3" style="margin-bottom:3.2em;">
+        <div class="card card-accent">
+          <span class="num">01</span>
+          <h3>Supervised Sports</h3>
+          <p>Football, basketball and table tennis sessions that encourage physical activity, teamwork and positive friendships.</p>
+        </div>
+        <div class="card card-accent">
+          <span class="num">02</span>
+          <h3>Music Tuition</h3>
+          <p>Keyboard, guitar, drums and singing lessons to help young people develop creative skills, confidence and discipline.</p>
+        </div>
+        <div class="card card-accent">
+          <span class="num">03</span>
+          <h3>Homework Club</h3>
+          <p>Supplementary education supporting progress in English, mathematics, digital skills and other core subjects, particularly for children who experience educational disadvantage.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-bottom:3.2em;">
+        <div class="card card-accent">
+          <span class="num">Older Residents</span>
+          <h3>Befriending &amp; Wellbeing</h3>
+          <p>Regular befriending sessions, social gatherings, gentle activities and telephone welfare checks — reducing loneliness, strengthening community connections and giving residents the opportunity to form supportive friendships.</p>
+        </div>
+        <div class="card card-accent">
+          <span class="num">For All Ages</span>
+          <h3>Intergenerational Activities</h3>
+          <p>Cooking sessions and arts and crafts workshops give children, adults and older people the chance to learn creative skills, express themselves and improve their emotional wellbeing — with community celebrations and exhibitions to share their work with families and neighbours.</p>
+        </div>
+      </div>
+
+      <p style="font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;color:var(--red);margin-bottom:1.1em;">Employment &amp; Welfare Support</p>
+      <div class="card card-accent" style="margin-bottom:3.2em;">
+        <h3>Practical Support</h3>
+        <p>ADPM Birmingham will also provide employment and welfare support, including help with job searches, CV writing, applications, interview preparation, digital access, benefits enquiries and referrals to specialist services. Volunteers will offer practical assistance and signpost residents to appropriate housing, health, debt and immigration support.</p>
+      </div>
+
+      <div style="background:var(--white);border-left:4px solid var(--red);border-radius:4px;padding:26px 30px;max-width:72ch;">
+        <p style="margin:0;color:var(--ink-soft);">Activities will be open to people of all faiths and backgrounds. The church will work with schools, community organisations and statutory agencies to reach vulnerable residents, avoid duplication and ensure that local people continue to shape the services through feedback, surveys and regular consultation meetings.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="max-width:640px;margin:0 auto;">
+      <div>
+        <h2 style="font-size:1.5rem;margin-bottom:1em;text-align:center;">Contact details</h2>
+        <ul class="info-list">
+          <li>
+            <span class="tag">Address</span>
+            <div><b>ADPM Birmingham</b><p>79-80 Buckingham Street, Birmingham, United Kingdom B19 3HU</p></div>
+          </li>
+          <li>
+            <span class="tag">Phone</span>
+            <div><b>0121 000 0000</b><p>Mon–Fri, 9:00AM–5:00PM</p></div>
+          </li>
+          <li>
+            <span class="tag">Email</span>
+            <div><b>adpmanculusso@gmail.com</b><p>We reply within 1–2 working days</p></div>
+          </li>
+          <li>
+            <span class="tag">Socials</span>
+            <div><b>@adpmbirmingham</b><p>Facebook, Instagram &amp; Youtube</p></div>
+          </li>
+        </ul>
+        <div class="map-block" style="margin-top:30px;">
+          <div class="map-pin">
+            <div class="dot"></div>
+            ADPM Birmingham
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PLAN A VISIT -->
+  <section id="visit" class="section-brown">
+    <div class="container">
+      <div class="section-head">
+        <h2>Planning your first visit?</h2>
+        <p>Here's exactly what to expect, so nothing feels unfamiliar when you walk through the door.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card" style="background:transparent;border-color:rgba(255,255,255,.25);">
+          <span class="num">01</span>
+          <h3 style="color:var(--white);">Arrive anytime from 10:45AM</h3>
+          <p style="color:#F3D9BE;">Our welcome team will be on the door from 15 minutes before service starts.</p>
+        </div>
+        <div class="card" style="background:transparent;border-color:rgba(255,255,255,.25);">
+          <span class="num">02</span>
+          <h3 style="color:var(--white);">Come as you are</h3>
+          <p style="color:#F3D9BE;">Smart, casual, in your Sunday best; however you're comfortable is fine with us.</p>
+        </div>
+        <div class="card" style="background:transparent;border-color:rgba(255,255,255,.25);">
+          <span class="num">03</span>
+          <h3 style="color:var(--white);">Kids &amp; youth are welcome</h3>
+          <p style="color:#F3D9BE;">Age-appropriate groups run alongside the main service for children and young people.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="stripe stripe--thin" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-brand">ADPM Birmingham</p>
+      <p class="footer-tag">A Pentecostal church family in Birmingham, gathered for worship, community and the next generation.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="youth.html">Youth</a></li>
+        <li><a href="leaders.html">Leaders</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <ul>
+        <li>Sundays, 10:30AM</li>
+        <li>Birmingham, UK</li>
+        <li><a href="contact.html">Get Directions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="https://www.facebook.com/Adpmaculussouk/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/adpmbirmingham/">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@adpmaculussobham">Youtube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; 2026 ADPM Birmingham. All rights reserved.</span>
+    <span>Built with faith, in Birmingham.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
