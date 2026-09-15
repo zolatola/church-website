@@ -3,8 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'self'; upgrade-insecure-requests">
-<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" type="image/jpeg" href="images/adpm-logo.jpg">
 <title>Schedule — ADPM Birmingham</title>
 <meta name="description" content="Weekly service times and upcoming events at ADPM Birmingham.">
@@ -191,7 +189,7 @@ ul{margin:0;padding:0;list-style:none;}
   .nav-toggle{display:flex;}
   .nav-links{
     position:fixed;
-    inset:65px 0 0 0;
+    top:65px;right:0;bottom:0;left:0;
     background:var(--white);
     flex-direction:column;
     align-items:flex-start;
@@ -704,7 +702,7 @@ textarea{resize:vertical;min-height:130px;}
       <img src="images/adpm-logo.jpg" alt="ADPM Birmingham logo" class="brand-mark">
       <span>ADPM<small>Birmingham</small></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
     </button>
     <ul class="nav-links">
@@ -750,15 +748,21 @@ textarea{resize:vertical;min-height:130px;}
           <tbody>
             <tr>
               <td class="day-cell">Sunday</td>
-              <td>Celebration Service</td>
-              <td>11:00AM – 1:00PM</td>
-              <td>Main Room</td>
+              <td>Worship Service</td>
+              <td>10:30AM – 1:00PM</td>
+              <td>Main Auditorium</td>
             </tr>
             <tr>
               <td class="day-cell">Sunday</td>
-              <td>Kids Church (ages 4–14)</td>
-              <td>12:00PM – 1:00PM</td>
-              <td>Youth Room</td>
+              <td>Kids Church (ages 4–10)</td>
+              <td>10:30AM – 12:30PM</td>
+              <td>Kids Hall</td>
+            </tr>
+            <tr>
+              <td class="day-cell">Sunday</td>
+              <td>Young Adults Fellowship</td>
+              <td>1:00PM – 2:00PM</td>
+              <td>Fellowship Room</td>
             </tr>
             <tr>
               <td class="day-cell">Tuesday</td>
@@ -768,27 +772,21 @@ textarea{resize:vertical;min-height:130px;}
             </tr>
             <tr>
               <td class="day-cell">Wednesday</td>
-              <td>Bible Study (Youth) </td>
-              <td>7:00PM – 8:00PM</td>
-              <td>Online</td>
-            </tr>
-            <tr>
-              <td class="day-cell">Thursday</td>
-              <td>Bible Study</td>
-              <td>7:30PM – 9:00PM</td>
-              <td>Online</td>
+              <td>Prayer &amp; Bible Study</td>
+              <td>7:00PM – 8:30PM</td>
+              <td>Main Auditorium</td>
             </tr>
             <tr>
               <td class="day-cell">Friday</td>
-              <td>Healing and Deliverance Service</td>
-              <td>7:00PM – 8:00PM</td>
-              <td>Main Room</td>
+              <td>Youth Night</td>
+              <td>6:30PM – 8:30PM</td>
+              <td>Youth Hall</td>
             </tr>
             <tr>
               <td class="day-cell">Saturday</td>
-              <td>Youth Service (biweekly)</td>
-              <td>6:00PM – 7:00PM</td>
-              <td>Main Room</td>
+              <td>Men's Fellowship (monthly)</td>
+              <td>9:00AM – 10:30AM</td>
+              <td>Fellowship Room</td>
             </tr>
           </tbody>
         </table>
@@ -805,7 +803,7 @@ textarea{resize:vertical;min-height:130px;}
       </div>
       <div class="grid grid-3">
         <div class="time-card">
-          <span class="day"> Baptism </span>
+          <span class="day">Baptism Sunday</span>
           <h3>New Believers' Baptism</h3>
           <span class="when">Next Sunday · 12:00PM</span>
         </div>
@@ -816,8 +814,8 @@ textarea{resize:vertical;min-height:130px;}
         </div>
         <div class="time-card">
           <span class="day">Youth</span>
-          <h3>Youth Retreat</h3>
-          <span class="when">November 2026· 6:30PM</span>
+          <h3>Youth Games Night</h3>
+          <span class="when">Last Friday of the Month · 6:30PM</span>
         </div>
         <div class="time-card">
           <span class="day">All Church</span>
@@ -825,9 +823,9 @@ textarea{resize:vertical;min-height:130px;}
           <span class="when">First Sunday of the Month · 1:00PM</span>
         </div>
         <div class="time-card">
-          <span class="day">All Church</span>
-          <h3>Holy Communion</h3>
-          <span class="when">Last Sunday of the Month · 11:00AM</span>
+          <span class="day">Prayer</span>
+          <h3>Night of Prayer</h3>
+          <span class="when">Last Friday of the Month · 10:00PM</span>
         </div>
         <div class="time-card">
           <span class="day">Leadership</span>
@@ -842,9 +840,9 @@ textarea{resize:vertical;min-height:130px;}
   <section class="cta-band">
     <div class="container">
       <h2>Can't make it on Sunday?</h2>
-      <p>Our services are also streamed online; visit our social media channels and enable notifications for updates.</p>
+      <p>Our services are also streamed online — get in touch and we'll send you the link before we go live.</p>
       <div class="cta-actions">
-        <a href="https://www.youtube.com/@adpmaculussobham" class="btn btn-ghost on-dark" target="_blank" rel="noopener noreferrer">Get the Livestream Link</a>
+        <a href="contact.html" class="btn btn-ghost on-dark">Get the Livestream Link</a>
       </div>
     </div>
   </section>
@@ -879,9 +877,8 @@ textarea{resize:vertical;min-height:130px;}
       <h4>Connect</h4>
       <ul>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="https://www.facebook.com/Adpmaculussouk/">Facebook</a></li>
-        <li><a href="https://www.instagram.com/adpmbirmingham/">Instagram</a></li>
-        <li><a href="https://www.youtube.com/@adpmaculussobham">Youtube</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
       </ul>
     </div>
   </div>

@@ -3,19 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'self' https://www.google.com https://maps.google.com https://*.google.com; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" type="image/jpeg" href="images/adpm-logo.jpg">
 <title>Contact — ADPM Birmingham</title>
 <meta name="description" content="Get in touch with ADPM Birmingham, plan your first visit, or find directions to our services.">
 <style>
-/* ============================================================
-   ADPM BIRMINGHAM — shared styles
-   Palette: orange #FF7324, cream #F8EC9A, brown #814D1E,
-            red #FF101C, white #FFFFFF
-   Signature: the "Unity Stripe" — a five-band ribbon standing
-   in for a congregation of many threads woven into one.
-   ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
@@ -191,7 +184,7 @@ ul{margin:0;padding:0;list-style:none;}
   .nav-toggle{display:flex;}
   .nav-links{
     position:fixed;
-    inset:65px 0 0 0;
+    top:65px;right:0;bottom:0;left:0;
     background:var(--white);
     flex-direction:column;
     align-items:flex-start;
@@ -588,38 +581,16 @@ textarea{resize:vertical;min-height:130px;}
 .info-list b{display:block;color:var(--brown);font-size:1.02rem;}
 .info-list p{margin:2px 0 0;color:var(--ink-soft);font-size:.92rem;}
 
-.map-block{
-  aspect-ratio:16/11;
-  border-radius:4px;
-  background:
-    linear-gradient(155deg, var(--cream), var(--white) 60%);
-  border:1px solid rgba(129,77,30,.18);
-  position:relative;
-  overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
+/* full-width map strip */
+.map-embed{
+  width:100%;
+  height:440px;
+  border:0;
+  display:block;
+  background:var(--cream);
 }
-.map-block::before{
-  content:'';
-  position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(129,77,30,.10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(129,77,30,.10) 1px, transparent 1px);
-  background-size:34px 34px;
-}
-.map-pin{
-  position:relative;
-  text-align:center;
-  font-family:var(--font-mono);
-  font-size:.8rem;
-  color:var(--brown);
-}
-.map-pin .dot{
-  width:20px;height:20px;
-  background:var(--red);
-  border:4px solid var(--white);
-  border-radius:50%;
-  margin:0 auto 10px;
-  box-shadow:0 0 0 3px var(--red);
+@media (max-width:640px){
+  .map-embed{height:320px;}
 }
 
 /* CTA band */
@@ -704,7 +675,7 @@ textarea{resize:vertical;min-height:130px;}
       <img src="images/adpm-logo.jpg" alt="ADPM Birmingham logo" class="brand-mark">
       <span>ADPM<small>Birmingham</small></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
     </button>
     <ul class="nav-links">
@@ -726,14 +697,14 @@ textarea{resize:vertical;min-height:130px;}
     <div class="container">
       <p class="eyebrow">We'd love to hear from you</p>
       <h1>Get in touch</h1>
-      <p>Questions about a service, prayer requests, or just want to say hello — reach us any of the ways below, or drop a message and someone from our team will reply within a day or two.</p>
+      <p>Questions about a service, prayer requests, or just want to say hello; reach us any of the ways below, or drop a message and someone from our team will reply within a day or two.</p>
     </div>
   </div>
 
   <!-- PASTORAL OUTREACH -->
   <section class="section-cream">
     <div class="container">
-      <p class="eyebrow">A Message from Our Pastor</p>
+      <p class="eyebrow">But First, A Message from Our Pastor</p>
       <h2 style="max-width:20ch;">Pastoral Outreach</h2>
       <p class="quote" style="max-width:72ch;margin:1em 0 3.2em;">&ldquo;Assembly of God Pentecostal of Maculusso (ADPM Birmingham) proposes to develop an inclusive community support programme for residents of Newtown and the wider Birmingham area. The services will respond directly to priorities identified through conversations and consultations with local people.&rdquo;<cite>Senior Pastor, ADPM Birmingham</cite></p>
 
@@ -803,16 +774,23 @@ textarea{resize:vertical;min-height:130px;}
             <div><b>@adpmbirmingham</b><p>Facebook, Instagram &amp; Youtube</p></div>
           </li>
         </ul>
-        <div class="map-block" style="margin-top:30px;">
-          <div class="map-pin">
-            <div class="dot"></div>
-            ADPM Birmingham
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- FIND US MAP -->
+  <section style="padding-top:0;padding-bottom:0;">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:32px;">
+        <h2>Find us</h2>
+        <p>79-80 Buckingham Street, Birmingham, United Kingdom B19 3HU</p>
+      </div>
+    </div>
+    <iframe class="map-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2309.223462549272!2d-1.907214719237385!3d52.48946241803214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bc93670961a5%3A0xbe4cf97fcf9d59c!2s79%2C%2080%20Buckingham%20St%2C%20Birmingham%20B19%203HU!5e1!3m2!1sen!2suk!4v1788958792185!5m2!1sen!2suk"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Map showing ADPM Birmingham location"></iframe>
+  </section>
 
   <!-- PLAN A VISIT -->
   <section id="visit" class="section-brown">
@@ -862,7 +840,7 @@ textarea{resize:vertical;min-height:130px;}
     <div>
       <h4>Visit</h4>
       <ul>
-        <li>Sundays, 10:30AM</li>
+        <li>Sundays, 11:00AM</li>
         <li>Birmingham, UK</li>
         <li><a href="contact.html">Get Directions</a></li>
       </ul>
@@ -871,9 +849,9 @@ textarea{resize:vertical;min-height:130px;}
       <h4>Connect</h4>
       <ul>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="https://www.facebook.com/Adpmaculussouk/">Facebook</a></li>
-        <li><a href="https://www.instagram.com/adpmbirmingham/">Instagram</a></li>
-        <li><a href="https://www.youtube.com/@adpmaculussobham">Youtube</a></li>
+        <li><a href="https://www.facebook.com/Adpmaculussouk/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+        <li><a href="https://www.instagram.com/adpmbirmingham/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@adpmaculussobham" target="_blank" rel="noopener noreferrer">Youtube</a></li>
       </ul>
     </div>
   </div>

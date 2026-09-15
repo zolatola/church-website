@@ -3,8 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'self'; upgrade-insecure-requests">
-<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" type="image/jpeg" href="images/adpm-logo.jpg">
 <title>Youth — ADPM Birmingham</title>
 <meta name="description" content="ADPM Birmingham Youth — raising the next generation in faith, friendship and purpose. Youth nights, programmes and events.">
@@ -191,7 +189,7 @@ ul{margin:0;padding:0;list-style:none;}
   .nav-toggle{display:flex;}
   .nav-links{
     position:fixed;
-    inset:65px 0 0 0;
+    top:65px;right:0;bottom:0;left:0;
     background:var(--white);
     flex-direction:column;
     align-items:flex-start;
@@ -755,7 +753,7 @@ textarea{resize:vertical;min-height:130px;}
       <img src="images/adpm-logo.jpg" alt="ADPM Birmingham logo" class="brand-mark">
       <span>ADPM<small>Birmingham</small></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
     </button>
     <ul class="nav-links">
@@ -793,9 +791,9 @@ textarea{resize:vertical;min-height:130px;}
         </div>
       </div>
       <div class="hero-art" aria-hidden="true" style="background:linear-gradient(155deg,var(--red),var(--brown) 82%);">
-        <img src="images/youth/youth4.jpg" alt=""
+        <img src="images/youth/youth-night-hero.jpg" alt=""
              style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
-            >
+             onerror="this.style.display='none'">
         <div class="hero-art-card" style="position:relative;">
           <b>Youth Night</b>
           Fridays · 6:30PM – 8:30PM<br>
@@ -815,7 +813,7 @@ textarea{resize:vertical;min-height:130px;}
       <div class="grid grid-3">
         <div class="card-photo">
           <div class="photo-frame">
-            <img src="images/youth/junior-youth.jpg" alt="Junior Youth group at ADPM Birmingham">
+            <img src="images/youth/junior-youth.jpg" alt="Junior Youth group at ADPM Birmingham" onerror="this.style.display='none'">
           </div>
           <div class="card-photo-content">
             <span class="num">Ages 11–14</span>
@@ -825,7 +823,7 @@ textarea{resize:vertical;min-height:130px;}
         </div>
         <div class="card-photo">
           <div class="photo-frame">
-            <img src="images/youth/senior-youth.jpg" alt="Senior Youth group at ADPM Birmingham">
+            <img src="images/youth/senior-youth.jpg" alt="Senior Youth group at ADPM Birmingham" onerror="this.style.display='none'">
           </div>
           <div class="card-photo-content">
             <span class="num">Ages 15–18</span>
@@ -835,7 +833,7 @@ textarea{resize:vertical;min-height:130px;}
         </div>
         <div class="card-photo">
           <div class="photo-frame">
-            <img src="images/youth/young-adults.jpg" alt="Young Adults group at ADPM Birmingham">
+            <img src="images/youth/young-adults.jpg" alt="Young Adults group at ADPM Birmingham" onerror="this.style.display='none'">
           </div>
           <div class="card-photo-content">
             <span class="num">Ages 18–25</span>
@@ -857,7 +855,7 @@ textarea{resize:vertical;min-height:130px;}
       <div class="grid grid-3">
         <div class="card-photo">
           <div class="photo-frame wide">
-            <img src="images/youth/connect.jpg" alt="Young people connecting before Youth Night begins">
+            <img src="images/youth/connect.jpg" alt="Young people connecting before Youth Night begins" onerror="this.style.display='none'">
           </div>
           <div class="card-photo-content">
             <span class="num">01 · 6:30PM</span>
@@ -867,7 +865,7 @@ textarea{resize:vertical;min-height:130px;}
         </div>
         <div class="card-photo">
           <div class="photo-frame wide">
-            <img src="images/youth/worship-and-word.jpg" alt="Youth-led worship at Youth Night">
+            <img src="images/youth/worship-and-word.jpg" alt="Youth-led worship at Youth Night" onerror="this.style.display='none'">
           </div>
           <div class="card-photo-content">
             <span class="num">02 · 7:15PM</span>
@@ -877,7 +875,7 @@ textarea{resize:vertical;min-height:130px;}
         </div>
         <div class="card-photo">
           <div class="photo-frame wide">
-            <img src="images/youth/small-groups.jpg" alt="Small group discussion at Youth Night">
+            <img src="images/youth/small-groups.jpg" alt="Small group discussion at Youth Night" onerror="this.style.display='none'">
           </div>
           <div class="card-photo-content">
             <span class="num">03 · 8:00PM</span>
@@ -894,7 +892,7 @@ textarea{resize:vertical;min-height:130px;}
     <div class="container" style="display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-end;">
       <div style="display:flex;gap:20px;align-items:flex-end;max-width:640px;">
         <div class="avatar-sm" aria-hidden="true">
-          <img src="images/youth/member-avatar.jpg" alt="">
+          <img src="images/youth/member-avatar.jpg" alt="" onerror="this.style.display='none'">
         </div>
         <p class="quote" style="color:var(--white);margin:0;">&ldquo;Youth Night is the one hour of my week where I don't have to explain myself. I'm just known.&rdquo;<cite style="color:#F3D9BE;">ADPM Youth Member</cite></p>
       </div>
@@ -911,16 +909,24 @@ textarea{resize:vertical;min-height:130px;}
       </div>
       <div class="gallery-grid">
         <div class="gallery-tile big">
-          <img src="images/youth/youth1.jpg" alt="Youth Night worship">
+          <img src="images/youth/gallery-1.jpg" alt="Youth Night worship" onerror="this.style.display='none'">
           <span>Youth Night Worship</span>
         </div>
         <div class="gallery-tile">
-          <img src="images/youth/youth2.jpg" alt="Youth games night">
+          <img src="images/youth/gallery-2.jpg" alt="Youth games night" onerror="this.style.display='none'">
           <span>Games Night</span>
         </div>
         <div class="gallery-tile">
-          <img src="images/youth/youth3.jpg" alt="Small group discussion">
+          <img src="images/youth/gallery-3.jpg" alt="Small group discussion" onerror="this.style.display='none'">
           <span>Small Groups</span>
+        </div>
+        <div class="gallery-tile">
+          <img src="images/youth/gallery-4.jpg" alt="Young adults fellowship" onerror="this.style.display='none'">
+          <span>Young Adults</span>
+        </div>
+        <div class="gallery-tile">
+          <img src="images/youth/gallery-5.jpg" alt="Youth outreach event" onerror="this.style.display='none'">
+          <span>Outreach Day</span>
         </div>
       </div>
       <div style="margin-top:36px;">
@@ -970,9 +976,8 @@ textarea{resize:vertical;min-height:130px;}
       <h4>Connect</h4>
       <ul>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="https://www.facebook.com/Adpmaculussouk/">Facebook</a></li>
-        <li><a href="https://www.instagram.com/adpmbirmingham/">Instagram</a></li>
-        <li><a href="https://www.youtube.com/@adpmaculussobham">Youtube</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
       </ul>
     </div>
   </div>

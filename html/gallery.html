@@ -3,8 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'self'; upgrade-insecure-requests">
-<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" type="image/jpeg" href="images/adpm-logo.jpg">
 <title>Gallery — ADPM Birmingham</title>
 <meta name="description" content="Photos from worship, youth nights, baptisms and community life at ADPM Birmingham.">
@@ -191,7 +189,7 @@ ul{margin:0;padding:0;list-style:none;}
   .nav-toggle{display:flex;}
   .nav-links{
     position:fixed;
-    inset:65px 0 0 0;
+    top:65px;right:0;bottom:0;left:0;
     background:var(--white);
     flex-direction:column;
     align-items:flex-start;
@@ -712,7 +710,7 @@ textarea{resize:vertical;min-height:130px;}
       <img src="images/adpm-logo.jpg" alt="ADPM Birmingham logo" class="brand-mark">
       <span>ADPM<small>Birmingham</small></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
     </button>
     <ul class="nav-links">
@@ -743,67 +741,56 @@ textarea{resize:vertical;min-height:130px;}
       
       <div class="gallery-grid">
         <div class="gallery-tile big" data-cat="worship" data-caption="Sunday Worship — the whole church family in praise.">
-          <img src="images/gallery/party.jpg" alt="Dinner celebrating the New Year with the church family">
-          <span>EOY Dinner</span>
+          <img src="images/gallery/sunday-worship.jpg" alt="Congregation worshipping during Sunday service">
+          <span>Sunday Worship</span>
         </div>
         <div class="gallery-tile" data-cat="youth" data-caption="Youth Night — games and worship every Friday.">
-          <img src="images/gallery/service.jpg" alt="Young people gathered at Youth Night">
+          <img src="images/gallery/youth-night.jpg" alt="Young people gathered at Youth Night">
           <span>Youth Night</span>
         </div>
         <div class="gallery-tile" data-cat="baptism" data-caption="Baptism Sunday — new believers taking their next step.">
-          <img src="images/gallery/service2.jpg" alt="A new believer being baptised">
+          <img src="images/gallery/baptism-sunday.jpg" alt="A new believer being baptised">
           <span>Baptism Sunday</span>
         </div>
         <div class="gallery-tile" data-cat="community" data-caption="Community Outreach — serving our Birmingham neighbours.">
-          <img src="images/gallery/angolaconf.jpg" alt="Church members serving the local community">
+          <img src="images/gallery/community-outreach.jpg" alt="Church members serving the local community">
           <span>Community Outreach</span>
         </div>
         <div class="gallery-tile" data-cat="community" data-caption="Fellowship Meal — a Sunday table for everyone.">
-          <img src="images/gallery/service4.jpg" alt="Church family sharing a fellowship meal">
+          <img src="images/gallery/fellowship-meal.jpg" alt="Church family sharing a fellowship meal">
           <span>Fellowship Meal</span>
         </div>
         <div class="gallery-tile" data-cat="worship" data-caption="Worship Team — leading the congregation in praise.">
-          <img src="images/gallery/service5.jpg" alt="Worship team leading praise on stage">
+          <img src="images/gallery/worship-team.jpg" alt="Worship team leading praise on stage">
           <span>Worship Team</span>
         </div>
         <div class="gallery-tile" data-cat="youth" data-caption="Youth Games Night — monthly friendly competition.">
-          <img src="images/gallery/service6.jpg" alt="Young people playing games at Youth Games Night">
+          <img src="images/gallery/youth-games-night.jpg" alt="Young people playing games at Youth Games Night">
           <span>Youth Games Night</span>
         </div>
         <div class="gallery-tile big" data-cat="community" data-caption="Food Bank Outreach — serving Birmingham together.">
-          <img src="images/gallery/service7.jpg" alt="Volunteers packing food bank donations">
+          <img src="images/gallery/food-bank-outreach.jpg" alt="Volunteers packing food bank donations">
           <span>Food Bank Outreach</span>
         </div>
         <div class="gallery-tile" data-cat="worship" data-caption="Midweek Prayer — gathered for prayer and the Word.">
-          <img src="images/gallery/service8.jpg" alt="Church members gathered for midweek prayer">
+          <img src="images/gallery/midweek-prayer.jpg" alt="Church members gathered for midweek prayer">
           <span>Midweek Prayer</span>
         </div>
         <div class="gallery-tile" data-cat="baptism" data-caption="Testimony Time — stories of new faith.">
-          <img src="images/gallery/service9.jpg" alt="A church member sharing their testimony">
+          <img src="images/gallery/testimony-time.jpg" alt="A church member sharing their testimony">
           <span>Testimony Time</span>
         </div>
         <div class="gallery-tile" data-cat="community" data-caption="Fellowship Sunday Lunch — first Sunday of every month.">
-          <img src="images/gallery/service10.jpg" alt="Church family enjoying Fellowship Sunday Lunch">
+          <img src="images/gallery/fellowship-sunday-lunch.jpg" alt="Church family enjoying Fellowship Sunday Lunch">
           <span>Sunday Lunch</span>
         </div>
         <div class="gallery-tile" data-cat="youth" data-caption="Young Adults — fellowship after the Sunday service.">
-          <img src="images/gallery/service11.jpg" alt="Young adults fellowshipping after Sunday service">
-          <span>Young Adults</span>
-        </div>
-        <div class="gallery-tile" data-cat="youth" data-caption="Young Adults — fellowship after the Sunday service.">
-          <img src="images/gallery/service11.jpg" alt="Young adults fellowshipping after Sunday service">
-          <span>Young Adults</span>
-        </div>
-        <div class="gallery-tile" data-cat="youth" data-caption="Young Adults — fellowship after the Sunday service.">
-          <img src="images/gallery/service11.jpg" alt="Young adults fellowshipping after Sunday service">
-          <span>Young Adults</span>
-        </div>
-        <div class="gallery-tile" data-cat="youth" data-caption="Young Adults — fellowship after the Sunday service.">
-          <img src="images/gallery/service11.jpg" alt="Young adults fellowshipping after Sunday service">
+          <img src="images/gallery/young-adults.jpg" alt="Young adults fellowshipping after Sunday service">
           <span>Young Adults</span>
         </div>
       </div>
 
+      <p style="margin-top:34px;font-size:.9rem;color:var(--ink-soft);">Add your own photos to the <code>images/gallery/</code> folder using the filenames above, and they'll appear here automatically.</p>
     </div>
   </section>
 
@@ -848,9 +835,8 @@ textarea{resize:vertical;min-height:130px;}
       <h4>Connect</h4>
       <ul>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="https://www.facebook.com/Adpmaculussouk/">Facebook</a></li>
-        <li><a href="https://www.instagram.com/adpmbirmingham/">Instagram</a></li>
-        <li><a href="https://www.youtube.com/@adpmaculussobham">Youtube</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
       </ul>
     </div>
   </div>

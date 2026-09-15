@@ -9,13 +9,6 @@
 <title>Leaders — ADPM Birmingham</title>
 <meta name="description" content="Meet the pastoral team and ministry leaders of ADPM Birmingham.">
 <style>
-/* ============================================================
-   ADPM BIRMINGHAM — shared styles
-   Palette: orange #FF7324, cream #F8EC9A, brown #814D1E,
-            red #FF101C, white #FFFFFF
-   Signature: the "Unity Stripe" — a five-band ribbon standing
-   in for a congregation of many threads woven into one.
-   ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
@@ -191,7 +184,7 @@ ul{margin:0;padding:0;list-style:none;}
   .nav-toggle{display:flex;}
   .nav-links{
     position:fixed;
-    inset:65px 0 0 0;
+    top:65px;right:0;bottom:0;left:0;
     background:var(--white);
     flex-direction:column;
     align-items:flex-start;
@@ -389,6 +382,11 @@ section{padding:86px 0;}
   content:'';
   position:absolute;inset:0;
   background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.08) 0 2px, transparent 2px 22px);
+}
+.person-photo img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
 }
 .person-initials{
   position:relative;
@@ -704,7 +702,7 @@ textarea{resize:vertical;min-height:130px;}
       <img src="images/adpm-logo.jpg" alt="ADPM Birmingham logo" class="brand-mark">
       <span>ADPM<small>Birmingham</small></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
     </button>
     <ul class="nav-links">
@@ -739,7 +737,7 @@ textarea{resize:vertical;min-height:130px;}
       </div>
       <div class="grid grid-3">
         <div class="person">
-          <div class="person-photo"><span class="person-initials">SP</span></div>
+          <div class="person-photo"><span class="person-initials">SP</span><img class="img-fallback" src="images/leaders/senior-pastor.jpg" alt="Senior Pastor"></div>
           <div class="person-body">
             <h3>Senior Pastor</h3>
             <span class="person-role">Lead Pastor</span>
@@ -747,7 +745,7 @@ textarea{resize:vertical;min-height:130px;}
           </div>
         </div>
         <div class="person">
-          <div class="person-photo"><span class="person-initials">AP</span></div>
+          <div class="person-photo"><span class="person-initials">AP</span><img class="img-fallback" src="images/leaders/associate-pastor.jpg" alt="Associate Pastor"></div>
           <div class="person-body">
             <h3>Associate Pastor</h3>
             <span class="person-role">Discipleship &amp; Teaching</span>
@@ -755,7 +753,7 @@ textarea{resize:vertical;min-height:130px;}
           </div>
         </div>
         <div class="person">
-          <div class="person-photo"><span class="person-initials">CP</span></div>
+          <div class="person-photo"><span class="person-initials">CP</span><img class="img-fallback" src="images/leaders/church-administrator.jpg" alt="Church Administrator"></div>
           <div class="person-body">
             <h3>Church Administrator</h3>
             <span class="person-role">Operations &amp; Admin</span>
@@ -775,7 +773,7 @@ textarea{resize:vertical;min-height:130px;}
       </div>
       <div class="grid grid-4">
         <div class="person">
-          <div class="person-photo" style="background:linear-gradient(150deg,var(--red),var(--brown));"><span class="person-initials">WL</span></div>
+          <div class="person-photo" style="background:linear-gradient(150deg,var(--red),var(--brown));"><span class="person-initials">WL</span><img class="img-fallback" src="images/leaders/worship-leader.jpg" alt="Worship Leader"></div>
           <div class="person-body">
             <h3>Worship Leader</h3>
             <span class="person-role">Music &amp; Worship</span>
@@ -783,7 +781,7 @@ textarea{resize:vertical;min-height:130px;}
           </div>
         </div>
         <div class="person">
-          <div class="person-photo" style="background:linear-gradient(150deg,var(--orange),var(--red));"><span class="person-initials">YL</span></div>
+          <div class="person-photo" style="background:linear-gradient(150deg,var(--orange),var(--red));"><span class="person-initials">YL</span><img class="img-fallback" src="images/leaders/youth-leader.jpg" alt="Youth Leader"></div>
           <div class="person-body">
             <h3>Youth Leader</h3>
             <span class="person-role">Youth Ministry</span>
@@ -791,7 +789,7 @@ textarea{resize:vertical;min-height:130px;}
           </div>
         </div>
         <div class="person">
-          <div class="person-photo" style="background:linear-gradient(150deg,var(--brown),var(--orange));"><span class="person-initials">CL</span></div>
+          <div class="person-photo" style="background:linear-gradient(150deg,var(--brown),var(--orange));"><span class="person-initials">CL</span><img class="img-fallback" src="images/leaders/childrens-leader.jpg" alt="Children's Leader"></div>
           <div class="person-body">
             <h3>Children's Leader</h3>
             <span class="person-role">Kids Ministry</span>
@@ -799,7 +797,7 @@ textarea{resize:vertical;min-height:130px;}
           </div>
         </div>
         <div class="person">
-          <div class="person-photo" style="background:linear-gradient(150deg,var(--cream),var(--brown));"><span class="person-initials">OL</span></div>
+          <div class="person-photo" style="background:linear-gradient(150deg,var(--cream),var(--brown));"><span class="person-initials">OL</span><img class="img-fallback" src="images/leaders/outreach-leader.jpg" alt="Outreach Leader"></div>
           <div class="person-body">
             <h3>Outreach Leader</h3>
             <span class="person-role">Community &amp; Missions</span>
@@ -839,7 +837,7 @@ textarea{resize:vertical;min-height:130px;}
     <div>
       <h4>Visit</h4>
       <ul>
-        <li>Sundays, 10:30AM</li>
+        <li>Sundays, 11:00AM</li>
         <li>Birmingham, UK</li>
         <li><a href="contact.html">Get Directions</a></li>
       </ul>

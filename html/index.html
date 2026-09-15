@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'self'; upgrade-insecure-requests">
-<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" type="image/jpeg" href="images/adpm-logo.jpg">
-<title>ADPM Birmingham - a family in the heart of Birmingham</title>
-<meta name="description" content="ADP Maculusso Birmingham is a warm, welcoming church family, a branch of the ADP Maculusso ministry. Join us for worship, connect with our youth and leaders, and find your place in our community.">
+<title>ADPM Birmingham — A Church Family in the Heart of Birmingham</title>
+<meta name="description" content="ADPM Birmingham is a warm, welcoming church family. Join us for worship, connect with our youth and leaders, and find your place in our community.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <style>
 /* ============================================================
@@ -192,7 +190,7 @@ ul{margin:0;padding:0;list-style:none;}
   .nav-toggle{display:flex;}
   .nav-links{
     position:fixed;
-    inset:65px 0 0 0;
+    top:65px;right:0;bottom:0;left:0;
     background:var(--white);
     flex-direction:column;
     align-items:flex-start;
@@ -705,7 +703,7 @@ textarea{resize:vertical;min-height:130px;}
       <img src="images/adpm-logo.jpg" alt="ADPM Birmingham logo" class="brand-mark">
       <span>ADPM<small>Birmingham</small></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
     </button>
     <ul class="nav-links">
@@ -745,9 +743,9 @@ textarea{resize:vertical;min-height:130px;}
     </div>
     <div class="container hero-strip-row">
       <div><b>Founded</b><br>Gathering the Birmingham community</div>
-      <div><b>Sunday Worship</b><br>11:00AM every week</div>
-      <div><b>Midweek Prayer</b><br>Wednesdays (youth), Thursdays, 7:00PM</div>
-      <div><b>Language</b><br>Services in English &amp; Portugese </div>
+      <div><b>Sunday Worship</b><br>10:30AM every week</div>
+      <div><b>Midweek Prayer</b><br>Wednesdays, 7:00PM</div>
+      <div><b>Language</b><br>Services in English &amp; French</div>
     </div>
   </section>
 
@@ -762,7 +760,7 @@ textarea{resize:vertical;min-height:130px;}
         <div class="card card-accent">
           <span class="num">01</span>
           <h3>Worship</h3>
-          <p>Sunday gatherings full of praise, prayer and the preached Word - in person and online, every week without fail.</p>
+          <p>Sunday gatherings full of praise, prayer and the preached Word — in person and online, every week without fail.</p>
         </div>
         <div class="card card-accent">
           <span class="num">02</span>
@@ -772,7 +770,7 @@ textarea{resize:vertical;min-height:130px;}
         <div class="card card-accent">
           <span class="num">03</span>
           <h3>Next Generation</h3>
-          <p>A thriving youth ministry raising young people in faith, friendship and purpose - see the <a href="youth.html" style="color:var(--orange);font-weight:600;">Youth page</a>.</p>
+          <p>A thriving youth ministry raising young people in faith, friendship and purpose — see the <a href="youth.html" style="color:var(--orange);font-weight:600;">Youth page</a>.</p>
         </div>
       </div>
     </div>
@@ -788,18 +786,18 @@ textarea{resize:vertical;min-height:130px;}
       <div class="grid grid-3">
         <div class="time-card">
           <span class="day">Sunday</span>
-          <h3>Celebration Service</h3>
-          <span class="when">11:00AM – 1:00PM</span>
+          <h3>Worship Service</h3>
+          <span class="when">10:30AM – 1:00PM</span>
         </div>
         <div class="time-card">
-          <span class="day">Thursday</span>
-          <h3>Prayer &amp; Bible Study (online)</h3>
+          <span class="day">Wednesday</span>
+          <h3>Prayer &amp; Bible Study</h3>
           <span class="when">7:00PM – 8:30PM</span>
         </div>
         <div class="time-card">
           <span class="day">Friday</span>
-          <h3>Healing and Deliverance</h3>
-          <span class="when">7:00PM – 8:00PM</span>
+          <h3>Youth Night</h3>
+          <span class="when">6:30PM – 8:30PM</span>
         </div>
       </div>
       <div style="margin-top:36px;">
@@ -822,6 +820,13 @@ textarea{resize:vertical;min-height:130px;}
       <div class="section-head">
         <h2>Life at ADPM</h2>
         <p>A look at recent Sundays, baptisms, youth nights and outreach across our church family.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-tile big" style="background:linear-gradient(150deg,var(--orange),var(--brown));"><span>Sunday Worship</span></div>
+        <div class="gallery-tile" style="background:linear-gradient(150deg,var(--red),var(--brown));"><span>Youth Night</span></div>
+        <div class="gallery-tile" style="background:linear-gradient(150deg,var(--cream),var(--orange));"><span>Baptism Sunday</span></div>
+        <div class="gallery-tile" style="background:linear-gradient(150deg,var(--brown),var(--red));"><span>Community Outreach</span></div>
+        <div class="gallery-tile" style="background:linear-gradient(150deg,var(--orange),var(--cream));"><span>Fellowship Meal</span></div>
       </div>
       <div style="margin-top:36px;">
         <a href="gallery.html" class="btn btn-ghost">View Full Gallery &rarr;</a>
@@ -871,9 +876,8 @@ textarea{resize:vertical;min-height:130px;}
       <h4>Connect</h4>
       <ul>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="https://www.facebook.com/Adpmaculussouk/">Facebook</a></li>
-        <li><a href="https://www.instagram.com/adpmbirmingham/">Instagram</a></li>
-        <li><a href="https://www.youtube.com/@adpmaculussobham">Youtube</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
       </ul>
     </div>
   </div>
